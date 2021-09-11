@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div>
       <Sidebar>
-        <h1 className="text-2xl font-normal text-center">The Binding of Isaac Repentance</h1>
+        <h1 className="text-2xl font-normal text-center">Logo goes here</h1>
       </Sidebar>
       <div className="ml-64">
         <MainSearch placeholder="Search anything"/>
