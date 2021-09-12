@@ -1,30 +1,11 @@
 import Sidebar from "../components/Sidebar"
 import MainSearch from "../components/MainSearch"
-import Gallery from "../components/Gallery"
+import CharacterList from "../components/CharacterList"
 
 import sampleImage from "../public/placeholder.png";
+import { fetchAPI } from "../lib/api";
 
-export default function Home() {
-  const items = [
-    { name: "Isaac", url: "#", image: sampleImage },
-    { name: "Magdalene", url: "#", image: sampleImage },
-    { name: "Cain", url: "#", image: sampleImage },
-    { name: "Judas", url: "#", image: sampleImage },
-    { name: "???", url: "#", image: sampleImage },
-    { name: "Eve", url: "#", image: sampleImage },
-    { name: "Samson", url: "#", image: sampleImage },
-    { name: "Azazel", url: "#", image: sampleImage },
-    { name: "Lazarus", url: "#", image: sampleImage },
-    { name: "Eden", url: "#", image: sampleImage },
-    { name: "The Lost", url: "#", image: sampleImage },
-    { name: "Lilith", url: "#", image: sampleImage },
-    { name: "Keeper", url: "#", image: sampleImage },
-    { name: "Apollyon", url: "#", image: sampleImage },
-    { name: "The Forgotten", url: "#", image: sampleImage },
-    { name: "Bethany", url: "#", image: sampleImage },
-    { name: "Jacob and Esau", url: "#", image: sampleImage },
-  ]
-
+export default function Home({ characters }) {
   return (
     <div>
       <Sidebar>
@@ -33,9 +14,19 @@ export default function Home() {
       <div className="ml-64">
         <MainSearch placeholder="Search anything"/>
         <div className="p-8">
-          <Gallery title="Characters" items={ items } />
+          <CharacterList title="Characters" characters={ characters } />
         </div>
       </div>
     </div>
   )
+}
+
+export async function getStaticProps(context) {
+  const characters = await fetchAPI("/characters");
+
+  return {
+    props: {
+      characters
+    }
+  }
 }
