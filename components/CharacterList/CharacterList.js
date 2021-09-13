@@ -1,6 +1,4 @@
-
 import { createRef, useState } from "react";
-
 
 import SingleCharacter from "./SingleCharacter";
 
