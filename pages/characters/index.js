@@ -1,18 +1,15 @@
-import { fetchAPI } from "../lib/api";
-import { fetchImageAsBase64 } from "../lib/image";
+import CharacterList from "../../components/CharacterList";
 
-import CharacterList from "../components/CharacterList"
+import { fetchAPI } from "../../lib/api";
+import { fetchImageAsBase64 } from "../../lib/image";
 
-export default function Home({ characters }) {
+export default function Character({ characters }) {
   return (
     <div>
-      <CharacterList title="Characters" characters={ characters }/>
+      <CharacterList title="Characters" characters={ characters } />
     </div>
   )
 }
-
-// TODO: Change index page layout.
-// Add buttons for characters that links to /characters etc.
 
 export async function getStaticProps(context) {
   const characters = await fetchAPI("/characters");
