@@ -28,9 +28,9 @@ export default function MainSearch({ placeholder }) {
 
   return (
     <div>
-      <input type="text" value={ searchTerm } onChange={ handleChange } placeholder={ placeholder } maxLength="50" className="placeholder-gray-500 w-full h-24 bg-gray-400 focus:outline-none px-8 text-gray-700 text-5xl shadow-xl"/>
+      <input type="text" value={ searchTerm } onChange={ handleChange } placeholder={ placeholder } maxLength="50" className="placeholder-gray-500 w-full h-12 md:h-24 bg-gray-400 focus:outline-none px-8 text-gray-700 text-xl md:text-5xl shadow-xl"/>
       { showResults && 
-        <div className="w-full h-16 bg-gray-600 px-8 py-4 text-gray-200 text-xl">
+        <div className="w-full truncate md:h-16 bg-gray-600 px-8 py-4 text-gray-200 text-md md:text-xl">
           No results found for <span className="font-bold">{ searchTerm }</span>
         </div>
       }

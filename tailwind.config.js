@@ -8,6 +8,9 @@ module.exports = {
       colors: {
         gray: colors.trueGray
       },
+      transitionProperty: {
+        'width': 'width'
+      }
     },
   },
   variants: {

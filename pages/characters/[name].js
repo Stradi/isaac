@@ -9,11 +9,11 @@ export default function Character({ character, content }) {
   return (
     <div>
       <h1 className="text-center text-4xl font-medium">{ character.Name }</h1>
-      <div className="flex flex-row-reverse justify-between">
-        <aside className="w-1/5 border sticky h-full top-4 m-2 mb-4 border-gray-300">
+      <div className="md:flex md:flex-row-reverse md:justify-between">
+        <aside className="w-full md:w-1/4 md:mx-auto  border md:sticky h-full top-4 m-2 mb-4 border-gray-300">
           <CharacterStats character={ character } imageScale="4" />
         </aside>
-        <div className="prose prose-lg max-w-full w-4/5">
+        <div className="prose prose-md md:prose-xl max-w-full md:w-3/4">
           <MDXRemote { ...content } />
         </div>
       </div>

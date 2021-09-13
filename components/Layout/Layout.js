@@ -8,7 +8,7 @@ export default function Layout({ children }) {
       <Sidebar>
         <h1 className="text-2xl font-normal text-center">Logo goes here</h1>
       </Sidebar>
-      <div className="ml-64">
+      <div className="ml-20 md:ml-56">
         <MainSearch placeholder="Search anything"/>
         <div className="p-8">
           { children }
