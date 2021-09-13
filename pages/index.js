@@ -6,7 +6,7 @@ import CharacterList from "../components/CharacterList"
 export default function Home({ characters }) {
   return (
     <div>
-      <CharacterList characters={ characters }/>
+      <CharacterList title="Characters" characters={ characters }/>
     </div>
   )
 }

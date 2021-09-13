@@ -7,7 +7,7 @@ export default function SingleCharacter({ character, scaleFactor }) {
     <Link passHref href={ `characters/${ character.Slug }` }>
       <a className={ itemClasses }>
         { /* TODO: Find a workaround for img tags. */ }
-        <img src={ `data:${ character.Image.mime };base64,${ character.Image.base64 }` } alt={ character.Image.alternativeText } width={ character.Image.width * scaleFactor } height={ character.Image.height * scaleFactor } />
+        <img src={ `data:${ character.Image.mime };base64,${ character.Image.base64 }` } alt={ character.Image.alternativeText } width={ character.Image.width * scaleFactor } height={ character.Image.height * scaleFactor } className="mx-auto" />
         <p className="table-footer-group align-bottom">{ character.Name }</p>
       </a>
     </Link>
