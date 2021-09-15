@@ -5,3 +5,8 @@
 img {
   image-rendering: pixelated;
 }
+
+.prose img {
+  margin-bottom: 0px !important;
+  margin-top: 0px !important;
+}

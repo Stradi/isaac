@@ -22,7 +22,7 @@ export default function Character({ character, content }) {
 }
 
 export async function getStaticProps({ params }) {
-  const character = await fetchAPI(`/characters?Slug=${params.name}`);
+  const character = await fetchAPI(`/characters?Slug=${ params.name }`);
   character[0].Image.base64 = await fetchImageAsBase64(character[0].Image.url);
 
   const mdSource = await serialize(character[0].Content)
@@ -39,7 +39,7 @@ export async function getStaticPaths() {
   const characters = await fetchAPI("/characters");
 
   const paths = characters.map((item) => ({
-    params: { name: item.Slug,  }
+    params: { name: item.Slug }
   }));
 
   return { paths, fallback: false }

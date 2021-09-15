@@ -8,12 +8,10 @@ export default function CharacterStats({ character, imageScale }) {
     <div>
       <img src={ `data:${ character.Image.mime };base64,${ character.Image.base64 }` } alt={ character.Image.alternativeText } width={ character.Image.width * imageScale } height={ character.Image.height * imageScale } className="mx-auto pb-4" />
       <table className="p-16 mx-auto w-full">
-        <thead>
-            <th className="font-medium text-center bg-gray-900 text-gray-200" colSpan="2">
-              Starting Items
-            </th>
+        <thead className="bg-gray-900 text-gray-200">
+            <tr><th colSpan="2">Starting Items</th></tr>
         </thead>
-        <tbody>
+        <tbody className="">
           <tr className="bg-gray-100">
             <td className="px-4 py-2 font-medium">Heart</td>
             <td className="px-4 py-2">{ heartImages }</td>
@@ -27,10 +25,10 @@ export default function CharacterStats({ character, imageScale }) {
             <td className="px-4 py-2">0</td>
           </tr>
         </tbody>
-        <thead>
-          <tr className="bg-gray-900 text-gray-200">
-            <th>Stat</th>
-            <th>Value</th>
+        <thead className="bg-gray-900 text-gray-200 text-left">
+          <tr>
+            <th className="px-4">Stat</th>
+            <th className="px-4">Value</th>
           </tr>
         </thead>
         <tbody>

@@ -1,4 +1,4 @@
-export default function Home({ characters }) {
+export default function Home() {
   return (
     <div>
       Nothing here
