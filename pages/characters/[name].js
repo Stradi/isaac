@@ -36,7 +36,7 @@ export async function getStaticProps({ params }) {
     props: {
       character: character[0],
       content: mdSource,
-      seo: character[0].SEO
+      seo: character[0].SEO || ""
     }
   }
 }
