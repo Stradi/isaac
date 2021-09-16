@@ -10,3 +10,16 @@ img {
   margin-bottom: 0px !important;
   margin-top: 0px !important;
 }
+
+.prose td p {
+  margin-bottom: 0px !important;
+  margin-top: 0px !important;
+}
+
+.prose tbody td {
+  vertical-align: middle !important;
+}
+
+.prose tbody td:first-child {
+  padding-left: 0.5rem !important;
+}

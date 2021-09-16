@@ -1,15 +1,16 @@
-import { MDXRemote } from "next-mdx-remote";
-import { serialize } from "next-mdx-remote/serialize";
-import { fetchAPI } from "../lib/api"
-
-import CharacterList from "../components/CharacterList";
-import { fetchImageAsBase64 } from "../lib/image";
 import { NextSeo } from "next-seo";
 
-export default function Page({ page, content, seo, componentProps }) {
-  const components = { CharacterList }
+import { MDXRemote } from "next-mdx-remote";
+import { serialize } from "next-mdx-remote/serialize";
 
-  console.log(seo);
+import { fetchAPI } from "../lib/api"
+import { fetchImageAsBase64 } from "../lib/image";
+
+import CharacterList from "../components/CharacterList";
+import PillList from "../components/PillList";
+
+export default function Page({ page, content, seo, componentProps }) {
+  const components = { CharacterList, PillList }
 
   return (
     <>
@@ -34,6 +35,8 @@ export async function getStaticProps({ params }) {
     return copy;
   });
   const characters = await Promise.all(charactersArray);
+  
+  const pills = await fetchAPI("/pills");
 
   const page = await fetchAPI(`/pages?Slug=${ params.slug }`);
   const mdSource = await serialize(page[0].Content);
@@ -44,7 +47,8 @@ export async function getStaticProps({ params }) {
       content: mdSource,
       seo: page[0].SEO,
       componentProps: {
-        characters
+        characters,
+        pills
       }
     }
   }
